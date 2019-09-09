@@ -5,7 +5,8 @@ export const VideoItem = ({ video }) => {
 
     return (
         <div className="search-bar ui segment">
-            Video = {video.snippet.description}
+            Video Title : {video.snippet.title}
+            Video Description : {video.snippet.description}
         </div>
     );
 }
