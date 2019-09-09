@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import youtube, { KEY } from '../api/youtube'
 import { SearchBar } from './SearchBar'
+import { VideoList } from './VideoList'
 
 export const App = () => {
     const [videos, setVideos] = useState([])
@@ -23,7 +24,7 @@ export const App = () => {
 
         <div className="ui container">
             <SearchBar onSearchSubmit={onSearchSubmit} />
-            I have {videos.length} videos
+            <VideoList videos={videos} />
         </div>
     );
 
