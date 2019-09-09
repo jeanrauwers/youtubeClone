@@ -12,7 +12,6 @@ export const App = () => {
                 key: KEY
             }
         })
-
     }
 
     return (
