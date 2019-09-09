@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const SearchBar = () => {
+export const SearchBar = ({onSearchSubmit}) => {
     const [searchTerm, setSearchTerm] = useState('')
     const searchTermHandler = (evt) => {
         evt.preventDefault()
@@ -8,9 +8,7 @@ export const SearchBar = () => {
     }
     const onFormSubmit = (evt) => {
         evt.preventDefault()
-        console.log("buum")
-        //TODO: Callback from parent component
-
+        onSearchSubmit(searchTerm)
     }
     return (
         <div className="search-bar ui segment">
