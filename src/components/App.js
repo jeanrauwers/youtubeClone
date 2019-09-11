@@ -14,16 +14,18 @@ export const App = () => {
             params: {
                 q: searchTerm,
                 part: 'snippet',
-                maxResults: 6,
+                maxResults: 11,
                 key: KEY
             }
         })
         const responseArr = response.data.items;
-        responseArr.shift()
+        const firstVideo = responseArr[0].id.kind !== 'youtube#channel' ? responseArr[0] : responseArr[1]
         setVideos(responseArr)
-        setSelectedVideo(responseArr[0])
+        setSelectedVideo(firstVideo)
 
     }
+    console.log(selectedVideo)
+
     return (
         <div className="ui container">
             <SearchBar onSearchSubmit={onSearchSubmit} />
@@ -33,7 +35,7 @@ export const App = () => {
                         <VideoDetail video={selectedVideo}></VideoDetail>
                     </div>
                     <div className="five wide column">
-                    <VideoList videos={videos} setSelectedVideo={setSelectedVideo} />
+                        <VideoList videos={videos} setSelectedVideo={setSelectedVideo} />
                     </div>
                 </div>
             </div>
