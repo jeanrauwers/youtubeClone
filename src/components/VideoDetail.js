@@ -1,11 +1,12 @@
 import React from 'react'
 
 export const VideoDetail = ({ video }) => {
+    const videoUrl = `https://www.youtube.com/embed/${video.id.videoId}`;
 
     if (!video) {
         return <div>Loading...</div>
     }
-    const videoUrl = `https://www.youtube.com/embed/${video.id.videoId}`;
+
     return (
         <>
             <div className="ui embed">
