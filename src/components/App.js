@@ -24,7 +24,6 @@ export const App = () => {
         setSelectedVideo(firstVideo)
 
     }
-    console.log(selectedVideo)
 
     return (
         <div className="ui container">
