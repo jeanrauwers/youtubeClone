@@ -25,7 +25,7 @@ export const App = () => {
 
     }
 
-    return (
+    return KEY === '' ? <h1>You need to update your API key, read docs!</h1> :
         <div className="ui container">
             <SearchBar onSearchSubmit={onSearchSubmit} />
             <div className="ui grid">
@@ -39,6 +39,8 @@ export const App = () => {
                 </div>
             </div>
         </div>
-    );
+
+
+
 
 } 
